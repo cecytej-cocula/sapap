@@ -1,0 +1,18 @@
+<h1 mat-dialog-title> Agregar {{remit}}
+    <mat-icon (click)="onNoClick()" class="icon">cancel</mat-icon>
+</h1>
+
+<div mat-dialog-content>
+    <mat-form-field appearance="fill" *ngIf='sugerencia' style="width: 100%;">
+        <mat-label>Sugerencia de tema</mat-label>
+        <input matInput [(ngModel)]="sug">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" *ngIf='respuesta' style="width: 100%;">
+        <mat-label>Respuesta al foro</mat-label>
+        <textarea matInput [(ngModel)]="res" rows="8" cols="20"></textarea>
+    </mat-form-field>
+    <div class="text-center">
+        <button mat-button (click)="enviarSugerencia()" class="btn btn-info">Enviar</button>
+    </div>
+</div>

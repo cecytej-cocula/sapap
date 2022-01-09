@@ -1,0 +1,59 @@
+<br>
+<div class="container">
+    <div class="container">
+        <mat-card class="example-card">
+            <mdb-carousel [animation]="'slide'" [isControls]="true" class="carousel slide carousel-fade carousel-dark"
+                [interval]="3000">
+                <mdb-carousel-item *ngFor="let item  of imagenes.Aviso">
+                    <img class="d-block w-100" src="{{item.url}}"
+                        style="height: 350px; width: 550px; text-align: center;">
+                </mdb-carousel-item>
+            </mdb-carousel>
+        </mat-card>
+    </div>
+    <br>
+    <div class="descargar">
+        <button type="button" class="btn btn-info" style="margin-left: 0%;">
+            <a href="https://firebasestorage.googleapis.com/v0/b/sapap-6675a.appspot.com/o/app-debug.apk?alt=media&token=54637f9f-19f7-4502-b513-c0aeef54a9be"
+                style="color: white;">Descargar versión móvil</a>
+        </button>
+    </div>
+    <br>
+    <script src="/chatbot.js"></script>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="salud">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1 class="banner__titulo"><strong>Salud Mental</strong></h1>
+
+                        <p class="banner__txt">
+                            La salud mental incluye nuestro bienestar emocional, psicológico y social. Afecta la forma
+                            en que pensamos, sentimos y actuamos cuando enfrentamos la vida. También ayuda a determinar
+                            cómo manejamos el estrés, nos relacionamos con los demás y tomamos decisiones.
+                            <br>
+                            La salud mental es importante porque puede ayudarle a:
+                            <br>
+                            * Enfrentar el estrés de la vida
+                            <br>
+                            * Estar físicamente saludable
+                            <br>
+                            * Tener relaciones sanas
+                            <br>
+                            * Contribuir en forma significativa a su comunidad
+                            <br>
+                            * Trabajar productivamente
+                            <br>
+                            * Alcanzar su completo potencial
+                        </p>
+                    </div>
+
+                    <div class="col-md-5">
+                        <div align="left">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/sapap-6675a.appspot.com/o/2.jpg?alt=media&token=ec7b5e85-1659-49df-aaf8-7d21e1447b61" width="400" height="400" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

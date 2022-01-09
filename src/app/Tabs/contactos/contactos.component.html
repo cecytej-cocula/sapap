@@ -1,0 +1,37 @@
+<br>
+<div class="text-center">
+  <h1 style="color: black;"><strong>Contactos</strong></h1>
+</div>
+<button type="submit" class="btn btn-info" (click)="agregar()" *ngIf='isPsicologo' style="margin-left: 10%;">
+  Agregar Contacto
+</button>
+<br>
+<br>
+<div class="container">
+  <table align="center" width="100%" cellpadding="6" cellspacing="1" bgcolor="#81d8d0">
+    <tr bgcolor="#81d8d0" style="text-align: center; align-items: center;">
+      <td><b>Contacto</b></td>
+      <th><b>Teléfono 1</b></th>
+      <th><b>Teléfono 2</b></th>
+      <th><b>Correo Electrónico</b></th>
+    </tr>
+    <tr bgcolor="#FFFFFF" *ngFor="let item of elem.Contacto">
+      <th><b>{{item.contacto}}</b></th>
+      <td>{{item.telefono1}}</td>
+      <td>{{item.telefono2}}</td>
+      <td>{{item.correo}}</td>
+      <td *ngIf='isPsicologo'>
+        <mat-icon style="color: black;" (click)="editar(item.contacto,item.telefono1, item.telefono2, item.correo)"
+          >edit</mat-icon>
+      </td>
+      <td *ngIf='isPsicologo'>
+        <mat-icon style="color: black;"
+          (click)="eliminarContacto(item.contacto,item.telefono1, item.telefono2, item.correo)" *ngIf='isPsicologo'>
+          delete
+        </mat-icon>
+      </td>
+    </tr>
+
+  </table>
+
+</div>

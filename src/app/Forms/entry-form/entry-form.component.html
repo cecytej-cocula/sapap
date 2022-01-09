@@ -1,0 +1,37 @@
+<div>
+    <form #entryForm="ngForm" (ngSubmit)="submitAction(entryForm)" style="align-items: left;">
+        <span id="group-from" class="group-form"></span>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="autor" (click)="ShowHideButton()" placeholder="{{inputPlaceholder}}" type="text"
+                            class="form-control input" required name="input" ngModel autofocus>
+
+                    </td>
+                </tr>
+                <tr *ngIf="sieslibro">
+                    <td>
+                        <input placeholder="Ingresa link de internet" type="text" class="form-control input" required
+                            name="link" ngModel autofocus>
+                    </td>
+                </tr>
+                <br>
+                <tr *ngIf="showMainContent">
+                    <td>
+                        <textarea id="entry" placeholder="{{areaPlaceholder}}" cols="30" rows="6"
+                            class="form-control input" required name="textarea" ngModel></textarea>
+                    </td>
+                    <td>
+                        <button type="submit" class="stybtn">Submit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>

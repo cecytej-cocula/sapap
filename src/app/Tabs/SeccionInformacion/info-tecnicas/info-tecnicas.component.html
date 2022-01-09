@@ -1,0 +1,47 @@
+<br>
+<div class="text-center"><h1 style="color: black;"><strong>Técnicas de respiración</strong></h1></div>
+<button type="button" class="btn btn-info" (click)="agregar()" *ngIf='isPsicologo' style="margin-left: 10%;">
+    Agregar Técnica
+</button>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="salud">
+                <div class="row">
+                    <div class=" col-md-3 divcont">
+                        <div style="height: 450px; overflow-y: scroll;">
+                            <div *ngIf="elem">
+                                <div *ngFor="let item of elem.Information">
+                                    <th><label (click)="buscar(item)" class="label1">{{item.titulo}}</label></th>
+                                    <th>
+                                        <mat-icon style="color: black;" (click)="editar(item.titulo, item.descripcion, item.versionMovil)" *ngIf='isPsicologo'>edit</mat-icon>
+                                    </th>
+                                    <th>
+                                        <mat-icon style="color: black;"
+                                            (click)="eliminarTecnica(item.titulo, item.descripcion, item.versionMovil)"
+                                            *ngIf='isPsicologo'>delete
+                                        </mat-icon>
+                                    </th>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row" *ngIf="showDivContent">
+                            <form #infoForm="ngForm">
+                                <div class="col-md-12 divpadre" style="width: 750px;">
+                                    <div class="text-center">
+                                        <b>{{item.titulo}}</b>
+                                    </div>
+                                    <div class="text-justify">
+                                        <p [innerHTML]="saltoDeLinea(item.descripcion)"></p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

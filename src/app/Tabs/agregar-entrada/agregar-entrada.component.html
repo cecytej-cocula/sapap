@@ -1,0 +1,30 @@
+<h1 mat-dialog-title> Agregar Entrada
+    <mat-icon (click)="onNoClick()" class="icon">cancel</mat-icon>
+</h1>
+
+<div mat-dialog-content>
+    <div class="row">
+        <div class="col-md-4">
+            <h3><b>Sugerencias</b></h3>
+            <li *ngFor="let sugerencia of sugerencias.Sugerencias">
+                <span>{{sugerencia.tema}}</span>
+                <mat-icon style="color: black;" (click)="eliminarSugerencia(sugerencia.tema)">delete</mat-icon>
+            </li>
+        </div>
+        <div class="col-md-8">
+            <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>Titulo</mat-label>
+                <input matInput [(ngModel)]="titulo">
+            </mat-form-field>
+            <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>Contenido</mat-label>
+                <textarea matInput [(ngModel)]="content" rows="10" cols="40"></textarea>
+            </mat-form-field>
+            <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+        </div>
+    </div>
+    <br>
+    <div class="text-center">
+        <button mat-button (click)="agregarEntrada()" class="btn btn-info">Enviar</button>
+    </div>
+</div>

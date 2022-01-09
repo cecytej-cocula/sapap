@@ -1,0 +1,26 @@
+.login{
+    position: absolute;
+    top: 60%; /* Buscamos el centro horizontal (relativo) del navegador */
+    left: 50%; /* Buscamos el centro vertical (relativo) del navegador */
+    width: 40%; /* Definimos el ancho del objeto a centrar */
+    height: 40%; /* Definimos el alto del objeto a centrar */
+    margin-top: -250px; /* Restamos la mitad de la altura del objeto con un margin-top */
+    margin-left: -250px; /* Restamos la mitad de la anchura del objeto con un margin-left */
+    text-align: center;
+    color: black;
+}
+  
+.card{
+    margin-left: 100px;
+  margin: 1rem;
+  padding: 1rem;
+  border: 2px solid #81d8d0;
+  width: 900px;
+    //   height: 550px;
+    //   overflow-y: scroll;
+  /* IMPORTANTE */
+  text-align: start;
+  border-radius: 10px;
+  border-bottom: 15px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+}

@@ -1,0 +1,10 @@
+<h1 mat-dialog-title> {{title}}
+    <mat-icon (click)="onNoClick()" class="icon">cancel</mat-icon>
+</h1>
+
+<div mat-dialog-content>
+    {{content}}
+    <br>
+    <br>
+    <label *ngIf='this.link!=null'><b>Descargalo en:</b> {{link}}</label>
+</div>

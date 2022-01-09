@@ -1,0 +1,20 @@
+<br>
+<div class="text-center">
+    <h1 style="color: black;"><strong>Recursos Multimedia</strong></h1>
+</div>
+
+<div class="container">
+    <div *ngFor="let item of elem.Video">
+        <table style="color: black; text-align: center;">
+            <tbody>
+              <tr>
+                <td><b>{{item.titulo}}</b> <mat-icon style="color: black;" (click)="eliminar(item.link,item.titulo, item.url)">delete
+                </mat-icon></td>
+              </tr>
+              <tr>
+                <th><iframe class="video-fluid" [src]="transform(item.url)" allowfullscreen></iframe></th>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<h1 mat-dialog-title> Editar Entrada
+    <mat-icon (click)="onNoClick()" class="icon">cancel</mat-icon>
+</h1>
+<h3> {{titulo}}</h3>
+<div mat-dialog-content>
+    <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Contenido</mat-label>
+        <textarea matInput [(ngModel)]="contenido" rows="10" cols="40"></textarea>
+    </mat-form-field>
+    <label for="nombre" *ngIf="imagen" style="display: flex; justify-content: center;">Imagen actual <mat-icon style="color: black;"
+        (click)="eliminarImagen()">delete
+    </mat-icon></label>
+    <label mat-image style="display: flex; justify-content: center;" *ngIf="imagen"><img src={{imagen}} width="20%" height="20%" style="display: flex; justify-content: center;"></label>
+    <br>
+    <label for="nombre" style="display: flex; justify-content: center;">Seleccionar imagen nueva</label><br>
+    <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+    <br>
+    <br>
+    <div class="text-center">
+        <button mat-button (click)="editarEntrada()" class="btn btn-info">Editar</button>
+    </div>
+</div>

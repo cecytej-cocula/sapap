@@ -1,0 +1,31 @@
+<br>
+<div class="text-center">
+  <h1 style="color: black;"><strong>Recursos Multimedia</strong></h1>
+</div>
+<button type="submit" class="btn btn-info" (click)="agregar()" *ngIf='isPsicologo' style="margin-left: 10%;">
+  Agregar Video
+</button>
+<br>
+<br>
+<button type="submit" class="btn btn-info" (click)="eliminar()" *ngIf='isPsicologo' style="margin-left: 10%;">
+  Eliminar Video
+</button>
+<div class="container">
+  <mat-card class="example-card">
+    <mdb-carousel [isControls]="true" class="carousel slide carousel-fade carousel-dark" [interval]="0">
+      <mdb-carousel-item *ngFor="let item of elem.Video" data-mdb-interval="0">
+        <div class="text-center">
+          <mat-label><b>{{item.titulo}}</b></mat-label>
+        </div>
+        <iframe class="video-fluid" type="text/html" [src]="transform(item.url)"
+          style="height: 400px; width: 350px; text-align: center; display:block; margin: 0 auto;" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+          <br>
+          <div class="text-center">
+            <a href="{{item.link}}"><b>Abrir video</b></a>
+          </div>
+      </mdb-carousel-item>
+    </mdb-carousel>
+  </mat-card>
+</div>

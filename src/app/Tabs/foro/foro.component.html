@@ -1,0 +1,92 @@
+<br>
+<div class="text-center">
+    <h1 style="color: black;"><strong>Foro</strong></h1>
+</div>
+<button type="submit" class="btn btn-info" (click)="agregar()" *ngIf='isPsicologo' style="margin-left: 10%;">
+    Agregar Entrada
+</button>
+<button type="submit" class="btn btn-info" (click)="sugerencia()" *ngIf='!isPsicologo' style="margin-left: 10%;">
+    Sugerir tema
+</button>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="salud">
+                <div class="row">
+                    <div class=" col-md-3 divcont">
+                        <div style="height: 450px; overflow-y: scroll;">
+                            <div *ngIf="elem">
+                                <table>
+                                    <div *ngFor="let item of entradas">
+                                        <th><label (click)="buscar(item)" class="label1" for="">{{item.tema}}</label>
+                                        </th>
+                                        <th>
+                                            <mat-icon style="color: black;"
+                                                (click)="editar(item.tema, item.contenido, item.imagen, item.date)"
+                                                *ngIf='isPsicologo'>edit</mat-icon>
+                                        </th>
+                                        <th>
+                                            <mat-icon style="color: black;"
+                                                (click)="eliminarEntrada(item.tema, item.contenido, item.imagen, item.date)"
+                                                *ngIf='isPsicologo'>delete
+                                            </mat-icon>
+                                        </th>
+                                    </div>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row" *ngIf="showDivContent">
+                            <div class="text-left">
+                                <button type="submit" class="btn btn-info" (click)="responder(item.tema)"
+                                    *ngIf="showDivContent" style="margin-left: 400%;">
+                                    Responder al foro
+                                </button>
+                            </div>
+                            <form #infoForm="ngForm">
+                                <div class="col-md-12 divpadre" style="width: 750px;">
+                                    <div class="col-md-11">
+                                        <div class="fecha">
+                                            {{fecha(item.date)}}
+                                        </div>
+                                        <div class="text-center">
+                                            <b>{{item.tema}}</b>
+                                        </div>
+                                        <div class="text-justify">
+                                            <p [innerHTML]="saltoDeLinea(item.contenido)"></p>
+                                        </div>
+                                        <div class="text-center">
+                                            <img src={{item.imagen}} width="50%">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="showDivContent">
+                    <div>
+                        <form #infoForm="ngForm" style="align-items: left;">
+                            <div class="col-md-12 divpadre">
+                                <div style="overflow-y: scroll;">
+                                    <div class="col-md-11" *ngFor="let res of item.Respuestas">
+                                        <div>
+                                            <mat-icon style="color: black;"
+                                                (click)="eliminarRespuesta(res.usuario, res.respuesta, res.date, item.tema)"
+                                                *ngIf='isPsicologo'>delete
+                                            </mat-icon>
+                                            <b>{{fecha(res.date)}} - {{res.usuario}}:</b> {{res.respuesta}}
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

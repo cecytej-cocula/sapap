@@ -1,0 +1,21 @@
+<br>
+<div class="text-center">
+    <h1 style="color: black;"><strong>Avisos</strong></h1>
+</div>
+<div class="container">
+    <div class="form-group" style="text-align: center;">
+        <label for="nombre">Seleccionar imagen nueva</label><br>
+        <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+    </div>
+    <div>
+        <table style="color: black; text-align: center;">
+            <tbody>
+                <tr *ngFor="let item  of imagenes.Aviso">
+                    <mat-icon style="color: black;" (click)="eliminar(item.url)">delete
+                    </mat-icon>
+                    <img class="d-block w-100" src="{{item.url}}" width="100px" height="200px">
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

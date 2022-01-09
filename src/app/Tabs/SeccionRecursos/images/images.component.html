@@ -1,0 +1,16 @@
+<br>
+<div class="text-center">
+  <h1 style="color: black;"><strong>Imágenes</strong></h1>
+</div>
+<button type="submit" class="btn btn-info" (click)="eliminar()" *ngIf='isPsicologo' style="margin-left: 10%;">
+  Agregar/Eliminar Imagen
+</button>
+<div class="container">
+  <mat-card class="example-card">
+    <mdb-carousel [animation]="'slide'" [isControls]="true" class="carousel slide carousel-fade carousel-dark" [interval]="3000">
+      <mdb-carousel-item *ngFor="let item  of imagenes.Imagen">
+        <img class="d-block w-100" src="{{item.url}}" style="height: 500px; width: 400px; text-align: center;">
+      </mdb-carousel-item>
+    </mdb-carousel>
+  </mat-card>
+</div>

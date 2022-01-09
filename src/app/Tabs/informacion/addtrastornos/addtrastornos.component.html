@@ -1,0 +1,56 @@
+<h1 mat-dialog-title> Agregar {{remit}}
+    <mat-icon (click)="onNoClick()" class="icon">cancel</mat-icon>
+</h1>
+
+<div mat-dialog-content>
+    <mat-form-field appearance="fill" *ngIf='informacion' style="width: 100%;">
+        <mat-label>Tema</mat-label>
+        <input matInput [(ngModel)]="titulo">
+    </mat-form-field>
+    <mat-form-field appearance="fill" *ngIf='informacion' style="width: 100%;">
+        <mat-label>Contenido</mat-label>
+        <textarea matInput [(ngModel)]="content" rows="10"></textarea>
+    </mat-form-field>
+    <p *ngIf='informacion'><input type="checkbox" [(ngModel)]="vMovil">
+        <mat-label> Agregar a la versión móvil</mat-label>
+    </p>
+    <mat-form-field appearance="fill" *ngIf='libro' style="width: 100%;">
+        <mat-label>Nombre del libro</mat-label>
+        <input matInput [(ngModel)]="nombre">
+    </mat-form-field>
+    <mat-form-field appearance="fill" *ngIf='libro' style="width: 100%;">
+        <mat-label>Autor</mat-label>
+        <input matInput [(ngModel)]="link">
+    </mat-form-field>
+    <mat-form-field appearance="fill" *ngIf='libro' style="width: 100%;">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput [(ngModel)]="descripcion" rows="9" cols="40"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill" *ngIf='contacto' style="width: 100%;">
+        <mat-label>Contacto</mat-label>
+        <input matInput [(ngModel)]="contact">
+    </mat-form-field>
+    <mat-form-field appearance="fill" *ngIf='contacto' style="width: 100%;">
+        <mat-label>Teléfono 1</mat-label>
+        <input matInput [(ngModel)]="tel1">
+    </mat-form-field>
+    <mat-form-field appearance="fill" *ngIf='contacto' style="width: 100%;">
+        <mat-label>Teléfono 2</mat-label>
+        <input matInput [(ngModel)]="tel2">
+    </mat-form-field>
+    <mat-form-field appearance="fill" *ngIf='contacto' style="width: 100%;">
+        <mat-label>Correo Electrónico</mat-label>
+        <input matInput [(ngModel)]="email">
+    </mat-form-field>
+    <mat-form-field appearance="fill" *ngIf='video' style="width: 100%;">
+        <mat-label>Titulo</mat-label>
+        <input matInput [(ngModel)]="tema">
+    </mat-form-field>
+    <mat-form-field appearance="fill" *ngIf='video' style="width: 100%;">
+        <mat-label>Link del video</mat-label>
+        <input matInput [(ngModel)]="url">
+    </mat-form-field>
+    <div class="text-center">
+        <button mat-button (click)="agregarInformacion()" class="btn btn-info">Enviar</button>
+    </div>
+</div>

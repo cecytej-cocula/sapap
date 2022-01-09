@@ -1,0 +1,80 @@
+<div class="row">
+    <div *ngIf="isPsicologo" class="col-md-3">
+        <div style="height: 450px; overflow-y: scroll;">
+            <div >
+                <input type="checkbox" [(ngModel)]="estado" (click)="enviarEstado()">
+                <mat-label> Conectado</mat-label>
+            </div>
+            <br>
+            <div *ngFor="let idchat of idChats; let i=index">
+                <div (click)="onupdatechat(idchat)">
+                    <label class="label1">
+                        <img src={{fotosDePerfil[i]}} width="30px" height="30px"
+                            style="border-radius: 800%; overflow: hidden;" />
+                        {{estudiantes[i]}}
+                    </label>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!isPsicologo" class="col-md-3">
+        <div style="height: 450px; overflow-y: scroll;">
+            <div (click)="onupdatechat(idchat)">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src={{imagen}} width="50px" height="50px" style="border-radius: 800%; overflow: hidden;" />
+                    </div>
+                    <div class="col-md-9">
+                        <label class="label1">
+                            {{nombre}}
+                        </label>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <label *ngIf='psicologoEnLinea'>
+                                    Conectado
+                                </label>
+                                <label *ngIf='!psicologoEnLinea'>
+                                    Desconectado
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8" style="resize: none;" id="mychats">
+        <div class="divpadre">
+            <div style="overflow-y: scroll;" class="fondo" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+                <div *ngIf="chatrooms">
+                    <div *ngFor="let item of chatrooms.Messages; let i=index">
+                        <div title="{{fecha(item.date)}}" [ngClass]="miMensaje[i]===true ?'mens':'mens1'">
+                            <label>
+                                <img src={{imagen2[i]}} width="30px" height="30px"
+                                    style="border-radius: 800%; overflow: hidden;" />
+                                {{desencriptar(item.contenido)}}
+                            </label>
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="row" *ngIf="idChatEstudiante">
+                <div class="col-md-12">
+                    <table>
+                        <tr>
+                            <td><textarea [(ngModel)]="msg" #area class="input" name="" id="" cols="30"
+                                    rows="5"></textarea>
+                            </td>
+                            <td><button color="success" (click)="sendMessage(idChatEstudiante)">
+                                    <mat-icon>send</mat-icon>
+                                </button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

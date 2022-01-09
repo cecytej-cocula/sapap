@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center">Editar Perfil</h1>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label><br>
+                    <input type="text" class="form-control" [(ngModel)]="name"/>
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido</label><br>
+                    <input type="text" class="form-control" [(ngModel)]="lastName"/>
+                </div>
+                <br>
+                <div class="form-group" style="text-align: center;">
+                    <label for="nombre">Imagen de perfil actual</label>
+                    <label mat-image style="display: flex; justify-content: center;"><img src={{image}} width="20%" height="20%" style="display: flex; justify-content: center;"></label>
+                    <label for="nombre">Seleccionar imagen nueva</label><br>
+                    <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+                </div>
+                <br>
+                <div class="text-center">
+                    <button type="submit" (click)="editar()" class="btn btn-info" style="margin-left: auto">
+                        Actualizar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

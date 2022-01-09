@@ -1,0 +1,106 @@
+<mat-toolbar color="secondary">
+    <mat-nav-list class="list-horizontal">
+        <img src="https://firebasestorage.googleapis.com/v0/b/sapap-6675a.appspot.com/o/logo1.jpg?alt=media&token=a92e8953-4505-4b8a-a85c-94cee393b639" width="200"/>
+        <mat-list-item>
+            <button mat-menu-item routerLink="pagina-principal" routerLinkActive="active">
+                <mat-icon>home</mat-icon>
+                Inicio
+            </button>
+        </mat-list-item>
+        <mat-list-item>
+            <button mat-menu-item [matMenuTriggerFor]="informacion">
+                Información
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+        </mat-list-item>
+        <mat-menu #informacion="matMenu" [overlapTrigger]="false">
+            <button mat-menu-item routerLink="infotrans" routerLinkActive="active">
+                <mat-icon>info</mat-icon>
+                <span>Trastornos</span>
+            </button>
+            <button mat-menu-item routerLink="infopap" routerLinkActive="active">
+                <mat-icon>info</mat-icon>
+                <span>Primeros Auxilios Psicológicos</span>
+            </button>
+            <button mat-menu-item routerLink="infotecnicas" routerLinkActive="active">
+                <mat-icon>info</mat-icon>
+                <span>Técnicas de respiración</span>
+            </button>
+        </mat-menu>
+
+        <mat-list-item>
+            <button mat-menu-item [matMenuTriggerFor]="recursos">
+                Recursos
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+        </mat-list-item>
+        <mat-menu #recursos="matMenu" [overlapTrigger]="false">
+            <button mat-menu-item routerLink="images" routerLinkActive="active">
+                <mat-icon>image</mat-icon>
+                <span>Imágenes</span>
+            </button>
+            <button mat-menu-item routerLink="videos" routerLinkActive="active">
+                <mat-icon>movie</mat-icon>
+                <span>Videos</span>
+            </button>
+            <button mat-menu-item routerLink="libros" routerLinkActive="active">
+                <mat-icon>menu_book</mat-icon>
+                <span>Libros Electrónicos</span>
+            </button>
+        </mat-menu>
+
+        <mat-list-item>
+            <button mat-menu-item routerLink="foro" routerLinkActive="active">
+                <mat-icon>people</mat-icon>
+                Foro
+            </button>
+        </mat-list-item>
+
+        <mat-list-item>
+            <button mat-menu-item routerLink="contactos" routerLinkActive="active">
+                <mat-icon>contacts</mat-icon>
+                Contactos
+            </button>
+        </mat-list-item>
+
+        <mat-list-item *ngIf='!isLoggedIn'>
+            <button mat-menu-item routerLink="login" routerLinkActive="active">
+                <mat-icon>login</mat-icon>
+                Iniciar Sesión
+            </button>
+        </mat-list-item>
+
+        <mat-list-item *ngIf='isLoggedIn'>
+            <button mat-menu-item [matMenuTriggerFor]="usuario">
+                <mat-icon>account_circle</mat-icon>
+                {{userData}}
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+        </mat-list-item>
+        <mat-menu #usuario="matMenu" [overlapTrigger]="false">
+            <label mat-image style="display: flex; justify-content: center;"><img src={{image}} width="100px"
+                    height="100px"
+                    style="border-radius: 800%; overflow: hidden; display: flex; justify-content: center;" /></label>
+            <button mat-menu-item routerLink="editarPerfil" routerLinkActive="active">
+                <mat-icon>person</mat-icon>
+                <span>Editar Perfil</span>
+            </button>
+            <button mat-menu-item routerLink="cambiarPassword" routerLinkActive="active">
+                <mat-icon>password</mat-icon>
+                <span>Cambiar Contraseña</span>
+            </button>
+            <button mat-menu-item routerLink="avisos" routerLinkActive="active" *ngIf='isPsicologo'>
+                <mat-icon>add</mat-icon>
+                <span>Agregar/Eliminar Aviso</span>
+            </button>
+            <button mat-menu-item *ngIf='isLoggedIn' (click)="openDialogChat()">
+                <mat-icon>group</mat-icon>
+                <span>Chat</span>
+            </button>
+            <button mat-menu-item routerLink="pagina-principal" (click)="logout()">
+                <mat-icon>logout</mat-icon>
+                Cerrar Sesión
+            </button>
+        </mat-menu>
+    </mat-nav-list>
+</mat-toolbar>

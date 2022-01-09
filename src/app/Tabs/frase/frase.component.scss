@@ -1,0 +1,99 @@
+
+.phrase {
+    /* background-color: rgb(18, 190, 124); */
+    
+    
+    color: black;
+    text-decoration-color: black;
+    text-shadow: .1rem .1rem .1rem #333;
+    transition: .2 ease;
+    text-align: center;
+    
+
+    font-family:  Brush Script MT;
+    font-size: 25px;
+    width: 1070px;
+    
+     padding: 22px;
+     opacity: 0.3;
+     margin-left: 120px;
+    
+    border: PowderBlue 5px double;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(18, 190, 124); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right, rgb(66, 197, 62), rgb(9, 165, 118));
+}
+.btn
+{
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 1020px;
+    font-weight: 900;
+    font-size: 11px;
+    color: #ffffff;
+    background-color: #1965d8;
+    border-radius: 6px;
+    border: 2px solid #00b0a1;
+}
+.stybtn
+{
+    text-decoration: none;
+    color: black;
+    font-family: sans-serif;
+    margin-top: 140px;
+    border-radius: 6px;
+    border: 2px solid #00b0a1;
+}
+
+label{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 500px;
+}
+.input
+{
+    margin-left: 500px;
+    width: 400px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    resize: none;
+    opacity: .3;
+}
+
+
+/* 
+.phrase::before{
+    content: 'Hover';
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    transform: translate(-50%, -50%);
+    font-size: 1.6rem;
+    color: black;
+    font-weight: 700;
+    text-shadow: .1rem .1rem .1rem #333;
+    transition: .2 ease;
+    opacity: 0;
+}
+.phrase::after{
+
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 1.6rem;
+    color: black;
+    font-weight: 700;
+    text-shadow: .1rem .1rem .1rem #333;
+    transition: .2 ease;
+}
+.phrase:hover::before{
+    transform: translate(-50%, -50%) scale(2);
+}
+.phrase:hover::after{
+    transform: translate(-50%, -50%) scale(1);
+} */
+
+
+
+
